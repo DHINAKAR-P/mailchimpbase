@@ -1,0 +1,1 @@
+exports.TemplateRouter = require("./TemplateRouter");exports.MemberRouter = require("./MemberRouter");exports.ListContactRouter = require("./ListContactRouter");exports.ListCampaignDefaultsRouter = require("./ListCampaignDefaultsRouter");exports.CampaignSettingsRouter = require("./CampaignSettingsRouter");exports.CampaignRecipientRouter = require("./CampaignRecipientRouter");

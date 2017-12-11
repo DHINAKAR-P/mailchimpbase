@@ -1,0 +1,456 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Mailchimpbase
+host: 52.175.215.67:9090
+basePath: /Mailchimpbase_10008
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /Template/Template:
+    put:
+      description: Update Template
+      parameters:
+        - name: template
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Template'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Template
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Template
+      parameters:
+        - name: template
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Template'
+      responses:
+        "201":
+          description: Success
+  /Template/Template/{TemplateId}:
+    delete:
+      description: Delete Template
+      parameters:
+        - name: TemplateId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Template by id
+      parameters:
+        - name: TemplateId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /Member/Member:
+    put:
+      description: Update Member
+      parameters:
+        - name: member
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Member'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Member
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Member
+      parameters:
+        - name: member
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Member'
+      responses:
+        "201":
+          description: Success
+  /Member/Member/{MemberId}:
+    delete:
+      description: Delete Member
+      parameters:
+        - name: MemberId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Member by id
+      parameters:
+        - name: MemberId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /ListContact/ListContact:
+    put:
+      description: Update ListContact
+      parameters:
+        - name: listcontact
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/ListContact'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all ListContact
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create ListContact
+      parameters:
+        - name: listcontact
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/ListContact'
+      responses:
+        "201":
+          description: Success
+  /ListContact/ListContact/{ListContactId}:
+    delete:
+      description: Delete ListContact
+      parameters:
+        - name: ListContactId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get ListContact by id
+      parameters:
+        - name: ListContactId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /ListCampaignDefaults/ListCampaignDefaults:
+    put:
+      description: Update ListCampaignDefaults
+      parameters:
+        - name: listcampaigndefaults
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/ListCampaignDefaults'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all ListCampaignDefaults
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create ListCampaignDefaults
+      parameters:
+        - name: listcampaigndefaults
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/ListCampaignDefaults'
+      responses:
+        "201":
+          description: Success
+  /ListCampaignDefaults/ListCampaignDefaults/{ListCampaignDefaultsId}:
+    delete:
+      description: Delete ListCampaignDefaults
+      parameters:
+        - name: ListCampaignDefaultsId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get ListCampaignDefaults by id
+      parameters:
+        - name: ListCampaignDefaultsId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /CampaignSettings/CampaignSettings:
+    put:
+      description: Update CampaignSettings
+      parameters:
+        - name: campaignsettings
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/CampaignSettings'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all CampaignSettings
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create CampaignSettings
+      parameters:
+        - name: campaignsettings
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/CampaignSettings'
+      responses:
+        "201":
+          description: Success
+  /CampaignSettings/CampaignSettings/{CampaignSettingsId}:
+    delete:
+      description: Delete CampaignSettings
+      parameters:
+        - name: CampaignSettingsId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get CampaignSettings by id
+      parameters:
+        - name: CampaignSettingsId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /CampaignRecipient/CampaignRecipient:
+    put:
+      description: Update CampaignRecipient
+      parameters:
+        - name: campaignrecipient
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/CampaignRecipient'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all CampaignRecipient
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create CampaignRecipient
+      parameters:
+        - name: campaignrecipient
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/CampaignRecipient'
+      responses:
+        "201":
+          description: Success
+  /CampaignRecipient/CampaignRecipient/{CampaignRecipientId}:
+    delete:
+      description: Delete CampaignRecipient
+      parameters:
+        - name: CampaignRecipientId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get CampaignRecipient by id
+      parameters:
+        - name: CampaignRecipientId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+
+definitions:
+  Template:
+    required:
+      - name
+      - html
+
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      html:
+        type: string
+  Member:
+    required:
+      - email
+      - status
+
+    properties:
+      id:
+        type: integer
+      email:
+        type: string
+      status:
+        type: string
+  ListContact:
+    required:
+      - company
+      - address1
+      - address2
+      - city
+      - state
+      - zip
+      - country
+
+    properties:
+      id:
+        type: integer
+      company:
+        type: string
+      address1:
+        type: string
+      address2:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      zip:
+        type: string
+      country:
+        type: string
+  ListCampaignDefaults:
+    required:
+      - from_name
+      - from_email
+      - subject
+      - language
+
+    properties:
+      id:
+        type: integer
+      from_name:
+        type: string
+      from_email:
+        type: string
+      subject:
+        type: string
+      language:
+        type: string
+  CampaignSettings:
+    required:
+      - subject_line
+      - title
+      - from_name
+      - reply_to
+      - template_id
+
+    properties:
+      id:
+        type: integer
+      subject_line:
+        type: string
+      title:
+        type: string
+      from_name:
+        type: string
+      reply_to:
+        type: string
+      template_id:
+        type: 
+  CampaignRecipient:
+    required:
+      - list_id
+
+    properties:
+      id:
+        type: integer
+      list_id:
+        type: string
