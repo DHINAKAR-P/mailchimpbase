@@ -44,9 +44,7 @@ module.exports.create_Campaign = function (Campaign, callback) {
 
 
 module.exports.send_Campaign = function (Campaign_id, callback) {
-    console.log("---------------",Campaign_id);
     BaseMailchimpService.get_auth_header_value(function (maildata) {
-        console.log("-----------in side----",Campaign_id);
         auth = maildata.auth;
         var options = {
             method: 'POST',
