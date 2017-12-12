@@ -16,3 +16,12 @@ module.exports.create_Campaign = function (req, res) {
     res.json(campaign);
   });
 }
+
+///campaigns/{campaign_id}/actions/send
+module.exports.send_Campaign = function (req, res) {
+  var Campaign = req.body;
+  service.send_Campaign(Campaign.campaign_id, function (campaign) {
+    res.status(201);
+    res.json(campaign);
+  });
+}

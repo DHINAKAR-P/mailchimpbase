@@ -3,17 +3,13 @@ var mail_config = require("../config/mail_config")
 
 //GET ALl Template
 module.exports.get_all_Template = function (req, res) {
-
   service.get_all_Template(function (template) {
-
     res.json(template);
   });
 }
 //GET TEMPLATE BY USER
 module.exports.get_all_Template_by_user = function (req, res) {
-
   service.get_all_Template_by_user(function (template) {
-
     res.json(template);
   });
 }

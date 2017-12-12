@@ -13,15 +13,10 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     permission_reminder:DataTypes.STRING,
     email_type_option:DataTypes.STRING(1),
-   // ListContact:{ type: Schema.Types.ObjectId, ref: 'ListContact'},
-   // ListCampaignDefaults:{ type: Schema.Types.ObjectId, ref: 'ListCampaignDefaults'}
   },{
     createdAt: false,
     updatedAt: false,
     freezeTableName:true
   });
   return List;
-  
-   ListContact.belongsTo(List);
-    ListCampaignDefaults.belongsTo(List);
 };

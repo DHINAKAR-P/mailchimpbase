@@ -1,4 +1,3 @@
-var dao = require("../daos/TemplateDao")
 var BaseMailchimpService = require("./BaseMailchimpService")
 var request = require("request");
 
