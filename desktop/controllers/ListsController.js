@@ -1,5 +1,4 @@
-var service = require("../services/MemberService")
-//--------------------------------------------------------------
+var service = require("../services/ListsService")
 //GET Members By List ID
 module.exports.get_all_list_Member = function(req, res) {
   var list_id = req.params.id;

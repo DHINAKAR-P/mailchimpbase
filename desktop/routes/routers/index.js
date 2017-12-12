@@ -1,6 +1,6 @@
 exports.TemplateRouter = require("./TemplateRouter");
 exports.CampaignRouter = require("./CampaignRouter");
-exports.MemberRouter = require("./MemberRouter");
+exports.ListRouter = require("./ListRouter");
 exports.ListContactRouter = require("./ListContactRouter");
 exports.ListCampaignDefaultsRouter = require("./ListCampaignDefaultsRouter");
 exports.CampaignSettingsRouter = require("./CampaignSettingsRouter");

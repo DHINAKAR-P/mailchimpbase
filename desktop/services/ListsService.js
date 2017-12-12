@@ -1,28 +1,5 @@
-var dao = require("../daos/MemberDao")
 var BaseMailchimpService = require("./BaseMailchimpService")
 var request = require("request");
-
-module.exports.create_Member = function (Member, callback) {
-  dao.create_Member(Member, function (member) {
-    callback(member);
-  });
-}
-module.exports.update_Member = function (Member, callback) {
-  dao.update_Member(Member, function (member) {
-    callback(member);
-  });
-}
-module.exports.search_Member_for_update = function (Member_id, callback) {
-  dao.search_Member_for_update(Member_id, function (member) {
-    callback(member)
-  });
-}
-module.exports.delete_Member = function (Member_id, callback) {
-  dao.delete_Member(Member_id, function () {
-    callback();
-  });
-}
-
 
 //Get
 module.exports.get_all_list_Member = function (list_id, callback) {
@@ -77,7 +54,7 @@ module.exports.get_all_Lists = function (callback) {
 
 
 module.exports.create_List = function (list, callback) {
-  console.log("list------------------- - > ",list);
+  console.log("list------------------- - > ", list);
   BaseMailchimpService.get_auth_header_value(function (maildata) {
     console.log("create List- >>>>", maildata)
     auth = maildata.auth;
@@ -89,7 +66,7 @@ module.exports.create_List = function (list, callback) {
           'content-type': 'application/json',
           authorization: auth
         },
-        body:list,
+      body: list,
       json: true
     };
 
@@ -102,7 +79,7 @@ module.exports.create_List = function (list, callback) {
   });
 }
 
-module.exports.add_member_to_list = function (list_id,memberdata, callback) {
+module.exports.add_member_to_list = function (list_id, memberdata, callback) {
   var list_id = list_id;
   BaseMailchimpService.get_auth_header_value(function (maildata) {
     auth = maildata.auth;
@@ -114,7 +91,7 @@ module.exports.add_member_to_list = function (list_id,memberdata, callback) {
           'content-type': 'application/json',
           authorization: auth
         },
-        body:memberdata,
+      body: memberdata,
       json: true
     };
 

@@ -4,22 +4,6 @@ var PropertiesReader = require('properties-reader');
 var sqlQuery = PropertiesReader(__dirname+'/../sql_queries/Member_SQL.properties');
 var request = require("request");
 module.exports.create_Member = function(Member,callback) {
-  /*var create_query = sqlQuery._properties.create_Member;
-  sequelize.query(create_query, {
-    replacements: {
-    	email : Member.email,
-    	status : Member.status,
-    	created_by : 0,
-    	updated_by : 0
-    },
-    type : sequelize.QueryTypes.INSERT,
-    model: models.Member
-  }).then(function(member) {
-		callback(member);
-	});*/
-
-
-
 var options = { method: 'POST',
   url: 'https://us17.api.mailchimp.com/3.0/lists/85edba3b58/members',
   headers: 
