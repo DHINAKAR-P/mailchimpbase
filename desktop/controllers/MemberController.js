@@ -1,44 +1,31 @@
 var service = require("../services/MemberService")
-module.exports.create_Member = function(req, res) {
-  var Member = req.body;
-  service.create_Member(Member,function (member){
-    res.status(201);
-    res.json(member);
-  });
-}
-module.exports.update_Member = function(req, res) {
-  var Member = req.body;
-  service.update_Member(Member,function (member){
-    res.status(201);
-    res.json(member);
-
-  });
-}
-module.exports.search_Member_for_update = function(req, res) {
-  var Member_id = parseInt(req.params[0], 10);
-  service.search_Member_for_update(Member_id,function (member){
-    res.json(member);
-  });
-}
-module.exports.delete_Member = function(req, res) {
-  var Member_id = parseInt(req.params[0], 10);
-  service.delete_Member(Member_id,function (){
-    res.status(204);
-    res.end();
-  });
-}
+//--------------------------------------------------------------
+//GET Members By List ID
 module.exports.get_all_list_Member = function(req, res) {
   var list_id = req.params.id;
-
-  console.log("list_id- > ",req)
-
   service.get_all_list_Member(list_id,function (member){
     res.json(member);
   });
 }
-
+//GET Get All List
 module.exports.get_all_Lists = function(req, res) {
     service.get_all_Lists(function (member){
+    res.json(member);
+  });
+}
+//POST Create List
+module.exports.create_List = function(req, res) {
+  var list = req.body;
+  service.create_List(list,function (listdata){
+    res.status(201);
+    res.json(listdata);
+  });
+}
+//POST Add member to list
+module.exports.add_member_to_list = function(req, res) {
+  var list_id = req.params.id;
+  var memberdata = req.body;
+  service.add_member_to_list(list_id,memberdata,function (member){
     res.json(member);
   });
 }

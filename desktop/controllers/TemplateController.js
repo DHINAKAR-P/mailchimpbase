@@ -30,7 +30,6 @@ module.exports.delete_Template = function(req, res) {
   });
 }
 module.exports.get_all_Template = function(req, res) {
-  var template_id = req.query.id;
 
   service.get_all_Template(function (template){
     

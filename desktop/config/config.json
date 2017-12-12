@@ -1,1 +1,1 @@
-{"database":{"password":"tang3456","dialect":"mysql","name":"mailchimpbase","host":"localhost","username":"gepuser"}}
+{"database":{"password":"root","dialect":"mysql","name":"mailchimpbase","host":"localhost","username":"root"}}
