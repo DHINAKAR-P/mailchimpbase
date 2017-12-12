@@ -1,26 +1,89 @@
 var dao = require("../daos/TemplateDao")
-module.exports.create_Template = function(Template,callback) {
-  dao.create_Template(Template,function (template){
-    callback(template);
+var BaseMailchimpService = require("./BaseMailchimpService")
+var request = require("request");
+
+//---------------------------
+module.exports.get_all_Template = function (callback) {
+  BaseMailchimpService.get_auth_header_value(function (maildata) {
+    auth = maildata.auth;
+    var options = {
+      method: 'GET',
+      url: maildata.api_url + 'templates',
+      headers:
+        {
+          'content-type': 'application/json',
+          authorization: auth
+        },
+      json: true
+    };
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      callback(body)
+    });
   });
 }
-module.exports.update_Template = function(Template,callback) {
-  dao.update_Template(Template,function (template){
-    callback(template);
+
+
+module.exports.get_all_Template_by_user = function (callback) {
+  BaseMailchimpService.get_auth_header_value(function (maildata) {
+    auth = maildata.auth;
+    var options = {
+      method: 'GET',
+      url: maildata.api_url + 'templates?type=user',
+      headers:
+        {
+          'content-type': 'application/json',
+          authorization: auth
+        },
+      json: true
+    };
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      callback(body)
+    });
   });
 }
-module.exports.search_Template_for_update = function(Template_id,callback) {
-  dao.search_Template_for_update(Template_id,function (template){
-    callback(template)
+
+
+module.exports.get_Template_by_id = function (Template_id, callback) {
+  BaseMailchimpService.get_auth_header_value(function (maildata) {
+    auth = maildata.auth;
+    var options = {
+      method: 'GET',
+      url: maildata.api_url + 'templates/'+Template_id,
+      headers:
+        {
+          'content-type': 'application/json',
+          authorization: auth
+        },
+      json: true
+    };
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      callback(body)
+    });
   });
 }
-module.exports.delete_Template = function(Template_id,callback) {
-  dao.delete_Template(Template_id,function (){
-    callback();
-  });
-}
-module.exports.get_all_Template = function(callback) {
-  dao.get_all_Template(function (list_of_template){
-    callback(list_of_template)
+
+module.exports.create_Template = function (Template, callback) {
+  console.log("Template - > ",Template)
+  BaseMailchimpService.get_auth_header_value(function (maildata) {
+    auth = maildata.auth;
+    console.log("Template ------------- > ",Template);
+    var options = {
+      method: 'POST',
+      url: maildata.api_url + 'templates',
+      headers:
+        {
+          'content-type': 'application/json',
+          authorization: auth
+        },
+        body:Template,
+      json: true
+    };
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      callback(body)
+    });
   });
 }
