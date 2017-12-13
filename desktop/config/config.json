@@ -1,9 +1,0 @@
-{
-    "database": {
-        "password": "root",
-        "dialect": "mysql",
-        "name": "mailchimpbase",
-        "host": "localhost",
-        "username": "root"
-    }
-}
